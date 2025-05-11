@@ -7,7 +7,7 @@ def interact_with_backend() -> None:
     """
     try:
         response = requests.get("http://localhost:8000/")
-        response.raise_for_status()  # Raise an exception for bad status codes
+        response.raise_for_status()
         print("Combined Service Root Response:", response.json())
     except requests.exceptions.RequestException as e:
         print(f"Error interacting with Combined Service Root: {e}")
@@ -44,5 +44,6 @@ def get_user_info(username: str) -> None:
 
 if __name__ == "__main__":
     interact_with_backend()
+    # TODO: do we need to store some data locally?
     get_item_info(1)
     get_user_info("testuser1")
