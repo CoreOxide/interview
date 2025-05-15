@@ -4,7 +4,7 @@ from typing import Dict, List
 users_app = FastAPI()
 
 users = [
-    {"username": "testuser1", "password": "password123", "email": "testuser1@example.com", "permissions": ["read"]},
+    {"username": "testuser1", "password": "password123", "email": "testuser1@example.com", "permissions": ["write"]},
     {"username": "testuser2", "password": "securepass", "email": "testuser2@example.com"}, "permissions": ["read", "write"]
 ]
 

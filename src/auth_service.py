@@ -72,7 +72,7 @@ def create_secured_endpoint(original_endpoint: callable) -> callable:
         """
         Secured endpoint for accessing item details.
         """
-        user = {"username": "", "auth": auth}  # TODO: Do you think we need username here? or authentication onformation is ehough?
+        user = {"username": "", "auth": auth}  # TODO: Do you think we need username here? or authentication information is ehough?
         authorization_service = AuthorizationService()
         if authorization_service.authorize_request(user, "/items/{item_id}"):
             # Call the original endpoint logic
