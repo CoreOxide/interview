@@ -1,17 +1,19 @@
+"""API client for interacting with the backend service."""
 import requests
-from typing import Any, Dict
+
 
 def interact_with_backend() -> None:
     """
     Interacts with the combined backend service's root endpoint and prints the response.
     """
     try:
-        response = requests.get("http://localhost:8000/")
+        response = requests.get("http://localhost:8000/", timeout=10)
         response.raise_for_status()
         print("Combined Service Root Response:", response.json())
     except requests.exceptions.RequestException as e:
         print(f"Error interacting with Combined Service Root: {e}")
-    
+
+
 def get_item_info(item_id: int) -> None:
     """
     Retrieves information for a specific item from the backend service.
@@ -20,7 +22,7 @@ def get_item_info(item_id: int) -> None:
         item_id: The ID of the item to retrieve.
     """
     try:
-        response = requests.get(f"http://localhost:8000/items/{item_id}")
+        response = requests.get(f"http://localhost:8000/items/{item_id}", timeout=10)
         response.raise_for_status()
         print(f"Item Info (Item ID: {item_id}):", response.json())
     except requests.exceptions.RequestException as e:
@@ -35,7 +37,7 @@ def get_user_info(username: str) -> None:
         username: The username of the user to retrieve.
     """
     try:
-        response = requests.get(f"http://localhost:8000/users/{username}")
+        response = requests.get(f"http://localhost:8000/users/{username}", timeout=10)
         response.raise_for_status()
         print(f"User Info (Username: {username}):", response.json())
     except requests.exceptions.RequestException as e:

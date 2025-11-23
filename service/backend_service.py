@@ -1,3 +1,4 @@
+"""Backend service module."""
 from fastapi import FastAPI
 
 backend_app = FastAPI()
