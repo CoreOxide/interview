@@ -1,11 +1,13 @@
+"""Users service module."""
+from typing import Dict
+
 from fastapi import FastAPI, HTTPException
-from typing import Dict, List
 
 users_app = FastAPI()
 
 users = [
-    {"username": "testuser1", "password": "password123", "email": "testuser1@example.com", "permissions": ["write"]},
-    {"username": "testuser2", "password": "securepass", "email": "testuser2@example.com"}, "permissions": ["read", "write"]
+    {"username": "testuser1", "age": 20, "email": "testuser1@example.com", "city": "New York"},
+    {"username": "testuser2", "age": 34, "email": "testuser2@example.com", "city": "Los Angeles"},
 ]
 
 @users_app.get("/")
